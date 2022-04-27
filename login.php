@@ -1,3 +1,12 @@
+<?php session_start();
+// var_dump($_SESSION);
+// var_dump($_POST);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $_SESSION['loginname'] = $_POST['loginname'];
+    header('Location:/');
+    exit;
+}
+  ?>
 <?php require 'inc/head.php'; ?>
 <div class="container" style="margin-top:40px">
     <div class="row">

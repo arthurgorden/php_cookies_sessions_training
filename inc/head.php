@@ -31,9 +31,19 @@
                 </a>
             </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-1">
+
+            </div>
+
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+                  <li>
+                    <a href="/login.php" name="login" class="btn btn-primary navbar-btn" value="Sign in">Sign in</a>
+                  </li>
+                    <li><form method='POST' action="logout.php">
+                      <input type="submit" name="logout" class="btn btn-danger navbar-btn" value="Sign out"></li>
+                    </form>
                     <li><a href="#">Chocolates chips</a></li>
                     <li><a href="#">Nuts</a></li>
                     <li><a href="#">Gluten full</a></li>
@@ -48,6 +58,6 @@
         </div><!-- /.container-fluid -->
     </nav>
     <div class="container-fluid text-right">
-        <strong>Hello Wilder !</strong>
+        <strong>Hello <?php if(isset($_SESSION['loginname'])) {echo $_SESSION['loginname'];} else {echo 'Wilder';} ?> !</strong>
     </div>
 </header>
