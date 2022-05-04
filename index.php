@@ -8,7 +8,7 @@ function addToCart(int $id)
     if (!isset($_GET['add_to_cart'])) {
         $_SESSION['cart'] = [];
     }
-    if (!empty($SESSION['cart'][$_GET['add_to_cart']])) {
+    if (!empty($_SESSION['cart'][$_GET['add_to_cart']])) {
         $id = $_GET['add_to_cart'];
         $_SESSION['cart'][$id]++;
     } else {
